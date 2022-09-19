@@ -1,0 +1,15 @@
+l1=50;
+l3=20;
+v=10;b=10;
+h=100;
+for t=0:0.1:10
+    t1=atan2(h-b-l3,v*t);
+    t2=pi/2-t1;
+    l2=sqrt((h-b-l3)^2+(v*t)^2)-l1;
+    px=(l1+l2)*cos(t1)+cos(t1+t2)*l3;
+    py=l3*sin(t1+t2)+sin(t1+t2)*(l3);
+    subplot(2,2,1);plot(t,t1,'r.');hold on;
+    subplot(2,2,2);plot(t,t2,'b.');hold on;
+    subplot(2,2,3);plot(t,l2,'y.');hold on;
+    subplot(2,2,4);plot(px,py,'g.');hold on;pause(0.05);
+end
